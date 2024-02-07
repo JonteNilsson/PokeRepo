@@ -1,14 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PokeRepo.Enum;
 
 namespace PokeRepo.Pages
 {
-    public class IndexModel : PageModel
+    public class DetailsModel : PageModel
     {
-        public Pokemons Pokemons { get; set; }
         public void OnGet()
         {
-
         }
     }
 }
