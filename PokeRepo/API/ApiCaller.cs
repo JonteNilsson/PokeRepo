@@ -4,6 +4,7 @@ using PokeRepo.Models;
 namespace PokeRepo.API
 
 {
+
     public class ApiCaller
     {
         public HttpClient? Client { get; set; }
@@ -35,4 +36,5 @@ namespace PokeRepo.API
             throw new HttpRequestException();
         }
     }
+
 }

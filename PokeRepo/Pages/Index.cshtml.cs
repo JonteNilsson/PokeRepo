@@ -3,6 +3,7 @@ using PokeRepo.Enum;
 
 namespace PokeRepo.Pages
 {
+
     public class IndexModel : PageModel
     {
 
@@ -10,10 +11,11 @@ namespace PokeRepo.Pages
         public Pokemons Pokemons { get; set; }
 
 
-        public List
-        public void OnGet()
-        {
+		public Pokemons Pokemons { get; set; }
 
-        }
-    }
+		public void OnGet()
+		{
+
+		}
+	}
 }

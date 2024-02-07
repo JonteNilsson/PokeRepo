@@ -1,18 +1,37 @@
-﻿namespace PokeRepo.Models
+﻿using Newtonsoft.Json;
+
+namespace PokeRepo.Models
 {
-    public class Root
-    {
-        public int Total { get; set; }
-        public int Skip { get; set; }
+	public class Root
+	{
 
-        public int Limit { get; set; }
+		[JsonProperty("base_experience")]
+		public int? BaseExperience { get; set; }
 
-    }
+		[JsonProperty("height")]
+		public int? Height { get; set; }
 
-    public class Pokemon
-    {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-        public string? Type { get; set; }
-    }
+		[JsonProperty("id")]
+		public int? Id { get; set; }
+
+		[JsonProperty("name")]
+		public string Name { get; set; }
+
+		[JsonProperty("sprites")]
+		public Sprites Sprites { get; set; }
+
+		[JsonProperty("weight")]
+		public int? Weight { get; set; }
+	}
+
+
+	public class Sprites
+	{
+		[JsonProperty("back_default")]
+		public string BackDefault { get; set; }
+
+		[JsonProperty("front_default")]
+		public string FrontDefault { get; set; }
+	}
+
 }
