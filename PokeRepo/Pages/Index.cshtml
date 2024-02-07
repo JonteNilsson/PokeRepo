@@ -5,9 +5,17 @@
     ViewData["Title"] = "Home page";
 }
 
-@foreach(var pokemon in Enum.GetNames(typeof(Pokemons)))
+
+
+
+
+<a class="btn btn-primary" asp-page="PokeRepo/index">PokeRepo</a>
+
+@foreach(var pokemon in Enum.GetValues(typeof(Pokemons)))
+
 {
     <a asp-page="/Details" asp-route-pokemonName="@pokemon">
     <h3>@pokemon</h3>
     </a>
 };
+

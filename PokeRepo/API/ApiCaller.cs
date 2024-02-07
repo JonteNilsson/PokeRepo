@@ -4,34 +4,37 @@ using PokeRepo.Models;
 namespace PokeRepo.API
 
 {
-	public class ApiCaller
-	{
-		public HttpClient? Client { get; set; }
 
-		public ApiCaller()
-		{
-			Client = new();
+    public class ApiCaller
+    {
+        public HttpClient? Client { get; set; }
 
-			Client.BaseAddress = new Uri("https://pokeapi.co/api/v2/");
-		}
 
-		public async Task<Root> MakeCall(string url)
-		{
-			HttpResponseMessage response = await Client.GetAsync(url);
+      
+        public ApiCaller()
+        {
+            Client = new();
 
-			if (response.IsSuccessStatusCode)
-			{
-				string json = await response.Content.ReadAsStringAsync();
+            Client.BaseAddress = new Uri("https://pokeapi.co/docs/v2#pokemon");
+        }
 
-				Root? result = JsonConvert.DeserializeObject<Root>(json);
+        public async Task<Root> MakeCall(string url)
+        {
+            HttpResponseMessage response = await Client.GetAsync(url);
 
-				if (result != null)
-				{
-					return result;
-				}
-			}
+            if (response.IsSuccessStatusCode)
+            {
+                string json = await response.Content.ReadAsStringAsync();
+                Root? result = JsonConvert.DeserializeObject<Root>(json);
 
-			throw new HttpRequestException();
-		}
-	}
+                if (result != null)
+                {
+                    return result;
+                }
+            }
+
+            throw new HttpRequestException();
+        }
+    }
+
 }
