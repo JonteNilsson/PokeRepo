@@ -8,6 +8,8 @@ namespace PokeRepo.API
     {
         public HttpClient? Client { get; set; }
 
+
+      
         public ApiCaller()
         {
             Client = new();
