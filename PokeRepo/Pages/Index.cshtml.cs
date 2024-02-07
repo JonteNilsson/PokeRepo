@@ -10,7 +10,6 @@ namespace PokeRepo.Pages
         public Pokemons Pokemons { get; set; }
 
 
-        public List
         public void OnGet()
         {
 

@@ -6,14 +6,57 @@
 }
 
 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome to the Pokémon App!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .pokemon-item {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .pokemon-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the PokéDex!</h1>
+
+    <div class="grid-container">
+        @foreach (var pokemon in Enum.GetValues(typeof(Pokemons)))
+        {
+            <div class="pokemon-item">
+                <img src="https://miro.medium.com/v2/resize:fit:1400/1*kZW4nlRSLAMq0EA2EoKStg.png" alt="@pokemon" />
+                <a asp-page="/Details">
+                    <h3>@pokemon</h3>
+                </a>
+            </div>
+        }
+    </div>
+</body>
+</html>
 
 
-<a class="btn btn-primary" asp-page="PokeRepo/index">PokeRepo</a>
 
-@foreach(var pokemon in Enum.GetValues(typeof(Pokemons)))
-{
-    <a asp-page="/Details">
-    <h3>@pokemon</h3>
-    </a>
-};
 
