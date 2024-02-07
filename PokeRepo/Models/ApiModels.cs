@@ -33,6 +33,7 @@ namespace PokeRepo.Models
 		[JsonProperty("front_default")]
 		public string FrontDefault { get; set; }
 	}
+}
 
 
 

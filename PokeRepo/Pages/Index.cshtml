@@ -48,7 +48,7 @@
         {
             <div class="pokemon-item">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/1*kZW4nlRSLAMq0EA2EoKStg.png" alt="@pokemon" />
-                <a asp-page="/Details">
+                <a asp-page="/Details" asp-route-pokemonName="@pokemon">
                     <h3>@pokemon</h3>
                 </a>
             </div>
