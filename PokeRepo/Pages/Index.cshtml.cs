@@ -5,7 +5,10 @@ namespace PokeRepo.Pages
 {
     public class IndexModel : PageModel
     {
+        public string? ErrorMessage { get; set; }
         public Pokemons Pokemons { get; set; }
+
+
         public void OnGet()
         {
 
