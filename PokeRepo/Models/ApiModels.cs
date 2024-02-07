@@ -34,4 +34,6 @@ namespace PokeRepo.Models
 		public string FrontDefault { get; set; }
 	}
 
-}
+
+
+
