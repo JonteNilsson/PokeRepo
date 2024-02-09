@@ -11,13 +11,13 @@ namespace PokeRepo.Pages
 		public string? ErrorMessage { get; set; }
 		public Root? Pokemons { get; set; }
 
-
-
-
 		public void OnGet()
 		{
 
-
 		}
+
+
+
+
 	}
 }
