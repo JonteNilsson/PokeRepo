@@ -9,6 +9,7 @@
 {
 	<img src="@Model.Pokemon.Sprites.FrontDefault" width="150" height="150" />
 	<h1>@(char.ToUpper(Model.Pokemon.Name[0]) + Model.Pokemon.Name.Substring(1).ToLower())</h1>
+	<hr style="width: 15%; margin: 10px 0 10px 0;">
 	<h5>Height: @Model.Pokemon.Height</h5>
 	<h5>Weight: @Model.Pokemon.Weight</h5>
 	<h5>Experience: @Model.Pokemon.BaseExperience</h5>
