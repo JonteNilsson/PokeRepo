@@ -1,22 +1,40 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using PokeRepo.Models;
+using PokeRepo.Services;
 
 namespace PokeRepo.Database
 {
-	public class PokemonRepository<T> where T : class
-	{
-		private readonly AppDbContext _context;
+    public class PokemonRepository : IPokemonRepository
+    {
+        private readonly AppDbContext context;
 
-		private readonly DbSet<T> _dbSet;
+        public PokemonRepository(AppDbContext context)
+        {
+            this.context = context;
+        }
 
-		public PokemonRepository(AppDbContext context)
-		{
-			_context = context;
-			_dbSet = context.Set<T>();
-		}
+        public IEnumerable<Root> AddPokemon(Root pokemon)
+        {
 
-		public void AddPokemon(T entity)
-		{
-			_dbSet.Add(entity);
-		}
-	}
+            context.Pokemons.Add(pokemon);
+            context.SaveChanges();
+            return GetAllPokemons();
+
+
+        }
+
+        public IEnumerable<Root> GetAllPokemons()
+        {
+            return context.Pokemons.ToList();
+        }
+
+        public Root GetPokemonByName(string pokemonName)
+        {
+            return context.Pokemons.FirstOrDefault(p => p.Name == pokemonName);
+        }
+
+        public void SaveChanges()
+        {
+            context.SaveChanges();
+        }
+    }
 }
